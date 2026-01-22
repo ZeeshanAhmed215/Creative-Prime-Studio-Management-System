@@ -130,6 +130,7 @@ pip install customtkinter
 pip install pillow
 pip install pandas
 pip install mysql-connector-python
+pip install openpyxl
 ```
 
 ---
@@ -201,7 +202,7 @@ main.py
 ### 🏫 Home Tab
 ![Dashboard](images/home_tab.png)
 
-### 👨‍🎓 Admission Form
+### Employees Tab
 ![Students](images/employees_tab.png)
 
 ### 🪟 View Tab
