@@ -1,3 +1,4 @@
+
 ---
 
 # 🎨 **Creative Prime Studio Management System**
@@ -65,20 +66,125 @@ Open **MySQL Workbench** and run:
 
 ```sql
 CREATE DATABASE creative_prime_studio;
-CREATE TABLE employees (
-    Id INT AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(100),
-    Skill VARCHAR(100),
-    Phone VARCHAR(50),
-    Address VARCHAR(255),
-    Hire_date VARCHAR(50)
+
+---
+
+## **1️⃣ Create the MySQL Database**
+
+Open **MySQL Workbench
+
+```sql
+CREATE DATABASE academy_management;
+```
+
+---
+
+## **2️⃣ Create Required Table**
+
+After creating the database, run this SQL command to create the **admin** table:
+
+```sql
+CREATE TABLE admin (
+    StudentId INT AUTO_INCREMENT PRIMARY KEY,
+    Student_Name VARCHAR(100) NOT NULL,
+    Father_Name VARCHAR(100) NOT NULL,
+    CNIC VARCHAR(100) UNIQUE NOT NULL,
+    Father_CNIC VARCHAR(100) UNIQUE NOT NULL,
+    Gender VARCHAR(100) NOT NULL,
+    DOB VARCHAR(100) NOT NULL,
+    Phone VARCHAR(100) NOT NULL,
+    Address VARCHAR(300) NOT NULL,
+    Father_pro VARCHAR(100) NOT NULL,
+    Course VARCHAR(100) NOT NULL,
+    Admission_Date VARCHAR(100) NOT NULL,
+    Course_Duration VARCHAR(100) NOT NULL,
+    Passing_Date VARCHAR(100) NOT NULL,
+    Fee_Status VARCHAR(100) NOT NULL
 );
-CREATE TABLE orders (
-    Id INT AUTO_INCREMENT PRIMARY KEY,
-    order_Name VARCHAR(100),
-    client_Name VARCHAR(100),
-    order_des VARCHAR(255),
-    price INT,
-    assign_id INT
-);
+```
+
+---
+
+## **3️⃣ Connect Your MySQL Database to the App**
+
+In your project, open your main.py
+
+Update your credentials:
+
+```python
+import mysql.connector
+
+db = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="YOUR_PASSWORD",
+    database="academy_management"
+)
+```
+
+
+
+---
+
+## **4️⃣ Install Required Python Libraries**
+
+Run these commands in terminal:
+
+```bash
+pip install customtkinter
+pip install pillow
+pip install fpdf
+pip install mysql-connector-python
+```
+
+---
+
+## **5️⃣ Run the Application**
+
+After installing the requirements, run:
+
+```bash
+main.py
+
+```
+##  **Generated PDFs**
+
+This system automatically generates:
+
+| Document Type      | Format | Description                            |
+| ------------------ | ------ | -------------------------------------- |
+| Student Challan    | PDF    | Fee challan with institute details     |
+| Student ID Card    | PDF    | Printable ID card (single or batch)    |
+| Course Certificate | PDF    | Official course completion certificate |
+
+
+
+## 🤝 **Contributions**
+
+Contributions, issues, and feature requests are welcome!
+Feel free to open an issue or submit a pull request.
+
+---
+
+## 📌 **Future Improvements**
+
+
+* QR code on ID cards
+* Attendance management module
+* Export/Import student data (CSV/Excel)
+
+---
+## 📸 Project Screenshots
+
+### 🏫 Home Tab
+![Dashboard](images/home_tab.png)
+
+### 👨‍🎓 Admission Form
+![Students](images/admission_tab.png)
+
+### 🪟 View Tab
+![Login](images/view_tab.png)
+
+
+
 
