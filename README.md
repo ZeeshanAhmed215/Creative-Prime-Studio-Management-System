@@ -66,41 +66,36 @@ Open **MySQL Workbench** and run:
 
 ```sql
 CREATE DATABASE creative_prime_studio;
-
----
-
-## **1️⃣ Create the MySQL Database**
-
-Open **MySQL Workbench
-
-```sql
-CREATE DATABASE academy_management;
 ```
-
 ---
+
+
+
+
+
 
 ## **2️⃣ Create Required Table**
 
-After creating the database, run this SQL command to create the **admin** table:
+After creating the database, run this SQL command to create the tables:
 
 ```sql
-CREATE TABLE admin (
-    StudentId INT AUTO_INCREMENT PRIMARY KEY,
-    Student_Name VARCHAR(100) NOT NULL,
-    Father_Name VARCHAR(100) NOT NULL,
-    CNIC VARCHAR(100) UNIQUE NOT NULL,
-    Father_CNIC VARCHAR(100) UNIQUE NOT NULL,
-    Gender VARCHAR(100) NOT NULL,
-    DOB VARCHAR(100) NOT NULL,
-    Phone VARCHAR(100) NOT NULL,
-    Address VARCHAR(300) NOT NULL,
-    Father_pro VARCHAR(100) NOT NULL,
-    Course VARCHAR(100) NOT NULL,
-    Admission_Date VARCHAR(100) NOT NULL,
-    Course_Duration VARCHAR(100) NOT NULL,
-    Passing_Date VARCHAR(100) NOT NULL,
-    Fee_Status VARCHAR(100) NOT NULL
+CREATE TABLE employees (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(100),
+    Skill VARCHAR(100),
+    Phone VARCHAR(50),
+    Address VARCHAR(255),
+    Hire_date VARCHAR(50)
 );
+CREATE TABLE orders (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    order_Name VARCHAR(100),
+    client_Name VARCHAR(100),
+    order_des VARCHAR(255),
+    price INT,
+    assign_id INT
+);
+
 ```
 
 ---
@@ -133,7 +128,7 @@ Run these commands in terminal:
 ```bash
 pip install customtkinter
 pip install pillow
-pip install fpdf
+pip install pandas
 pip install mysql-connector-python
 ```
 
@@ -147,44 +142,74 @@ After installing the requirements, run:
 main.py
 
 ```
-##  **Generated PDFs**
-
-This system automatically generates:
-
-| Document Type      | Format | Description                            |
-| ------------------ | ------ | -------------------------------------- |
-| Student Challan    | PDF    | Fee challan with institute details     |
-| Student ID Card    | PDF    | Printable ID card (single or batch)    |
-| Course Certificate | PDF    | Official course completion certificate |
 
 
 
-## 🤝 **Contributions**
 
-Contributions, issues, and feature requests are welcome!
-Feel free to open an issue or submit a pull request.
 
 ---
 
-## 📌 **Future Improvements**
+## 📌 Future Improvements
 
+* 🔐 **Authentication & Authorization**
+  - Admin and employee login system
+  - Role-based access (Admin / Manager / Employee)
 
-* QR code on ID cards
-* Attendance management module
-* Export/Import student data (CSV/Excel)
+* 📊 **Order Status Tracking**
+  - Track order progress (Pending, In Progress, Completed)
+  - Delivery date and priority management
+
+* 👥 **Employee Performance Monitoring**
+  - Track completed orders per employee
+  - Performance reports and summaries
+
+* 📄 **Report Generation**
+  - Generate employee and order reports
+  - Export reports to **Excel (CSV/XLSX)** and **PDF**
+
+* 🔔 **Notifications & Alerts**
+  - Alerts for new order assignments
+  - Notifications for deadlines and updates
+
+* 🌐 **Web-Based Version (Django)**
+  - Convert desktop app to a Django web application
+  - REST API for frontend or mobile app
+  - High scalability and cloud deployment
+
+* 🗃️ **Database Enhancements**
+  - Add foreign key constraints
+  - Improve normalization and indexing
+  - Backup & recovery system
+
+* 📱 **Responsive UI Improvements**
+  - Improved UI/UX design
+  - Dashboard with charts and statistics
+
+* ☁️ **Cloud Deployment**
+  - Host application on cloud servers
+  - Use managed databases (AWS RDS / Railway / PlanetScale)
+
+* 📦 **Inventory & Resource Management**
+  - Manage studio resources and tools
+  - Assign resources to orders
 
 ---
+
+
 ## 📸 Project Screenshots
 
 ### 🏫 Home Tab
 ![Dashboard](images/home_tab.png)
 
 ### 👨‍🎓 Admission Form
-![Students](images/admission_tab.png)
+![Students](images/employees_tab.png)
 
 ### 🪟 View Tab
-![Login](images/view_tab.png)
+![Login](images/orders_tab.png)
 
+---
+## 🤝 **Contributions**
 
-
+Contributions, issues, and feature requests are welcome!
+Feel free to open an issue or submit a pull request.
 
